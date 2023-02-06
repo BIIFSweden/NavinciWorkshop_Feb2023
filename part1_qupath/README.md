@@ -85,32 +85,20 @@ Now repeat this step for all markers. To better see the intensities inside the c
 
 ![](images/screenshot_trippel_pos.png?raw=true "Screenshot")
 
- 
-
-
-![](images/screenshot_multiclass1.png?raw=true "Screenshot")
-
-![](images/screenshot_multiclass2.png?raw=true "Screenshot")
 
 ### Applying a trained classifier on a different image
 
-In the `Project` tab in the left panel, open the second image (the one you did not use for training) for the project. Repeat the steps above for core annotation and cell segmentation, and then try each of the trained classifiers on the cells in this image and compare with the results you got on the first image.
-
-### Feature normalization (optional)
-
-TODO
+In the `Project` tab in the left panel, open the second image (OvaryTMA-T113a_A3.lif) for the project. Repeat the steps above for core annotation, cell segmentation and marker detection, and then try each of the trained classifiers on the cells in this image and compare with the results you got on the first image.
 
 ## Exporting results
 
 ### As GeoJSON (with cells exported as polygonal regions)
 
-Go to `Menu->Objects->Select->Select detections->Select cells` to first select all the cells in the open image, and then go to `Menu->File->Object data->Export as GeoJSON` and make sure you are using the options in the screenshot below to export only selected objects (i.e., the cells). Repeat this step for each image, and name the exported files 5_10_B.geojson and 7_1_E.geojson (or similar).
-
-![](images/screenshot_export_geojson.png?raw=true "Screenshot")
+Go to `Menu->Objects->Select->Select detections->Select cells` to first select all the cells in the open image, and then go to `Menu->File->Object data->Export as GeoJSON` and make sure you are using the options in the screenshot below to export only selected objects (i.e., the cells). Repeat this step for each image, and name the exported files A2.geojson and A3.geojson (or similar). The resulting cell outlines may later be opened in e.g. TissUUmaps.
 
 ### As CSV table (with cells exported as points)
 
-Go to `Menu->Measure->Export measurements` and select which image you want to export the cells from. Make sure you are using the options in the screenshot below to export in a CSV format that for example TissUUmaps can read. Repeat this step for each image, and name the exported files 5_10_B.csv and 7_1_E.csv (or similar).
+Go to `Menu->Measure->Export measurements` and select which image you want to export the measrements from. Make sure you are using the options in the screenshot below to export in a CSV format that for example TissUUmaps can read. Repeat this step for each image, and name the exported files A2.csv and A3.csv (or similar).
 
 Note: if you see the warning "A selected image is open in the viewer..." displayed like in the screenshot, you can just save the project before opening the "Export measurements" dialog again.
 
