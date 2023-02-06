@@ -2,13 +2,13 @@
 
 By Fredrik Nysjö, Carolina Wählby and Anna Klemm
 
-## Data, part 1 on TMAs imaged by fluorescence microscopy
+## Dataset 1, TMAs imaged by fluorescence microscopy
 
 Folder: distributed by Agata prior to workshop
 
 Images: 
--  OvaryTMA-T113a_A2.lif, showing clear cell carcinoma (malignant)
--  OvaryTMA-T113a_A3.lif, showing serous adenocarcinoma (malignant)
+-  OvaryTMA-T113a_A2.lif, showing ovary tissue with clear cell carcinoma (malignant)
+-  OvaryTMA-T113a_A3.lif, showing ovary tissue with serous adenocarcinoma (malignant)
 
 Markers:
 -	Channel 1: Dapi – Blue – Nuclei
@@ -18,17 +18,15 @@ Markers:
 
 ## Creating a new QuPath project
 
-Go to `Menu->File->Project->Create project`. This will ask you to create a new folder for the project, where any non-image data (annotations, trained classifiers, detections, etc.) will be stored.
+Go to `Menu->File->Project->Create project`. This will ask you to create a new folder for the project, where any non-image data (annotations, trained classifiers, detections, etc.) will be stored. THe folder should be empty at start, and the images are kept at their original location and only linked to the folder.
 
-For the new project, in the `Project` tab in the left panel, click on `Add images` and select the two .tif images from Dataset 1. You can also just drag-and-drop the images onto the QuPath window. Afterward, the project with the two images should look like this:
-
-![](images/screenshot_project.png?raw=true "Screenshot")
+For the new project, in the `Project` tab in the left panel, click on `Add images` and select the two .lif images from Dataset 1. You can also just drag-and-drop the images onto the QuPath window. 
 
 ## Core annotation
 
 ### Displaying individual image channels
 
-Each image in the dataset contains image data for a single tissue-micro array (TMA) core with 10 channels (8 Opal marker channels + DAPI + an autofluorescent channel). Open the image for the first core (5_10_B), and use the Brightness & contrast tool from the toolbar (looks like a half-moon) to make only the DAPI channel visible in the viewport:
+Each image in the dataset contains image data for a single tissue-micro array (TMA) core with 4 channels as described above. Open the image for the first core (OvaryTMA-T113a_A2.lif), and use the Brightness & contrast tool from the toolbar (looks like a half-moon) to make only the DAPI channel visible in the viewport:
 
 ![](images/screenshot_brightness_contrast1.png?raw=true "Screenshot")
 
