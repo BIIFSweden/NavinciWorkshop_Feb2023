@@ -36,29 +36,25 @@ Each image in the dataset contains image data for a single tissue-micro array (T
 
 ![](images/screenshot_brightness_contrast2.png?raw=true "Screenshot")
 
-### Basic annotation drawing
+### Selecting a region of interest
 
-To select a regions of interest using the Square or Ellipse tool from the toolbar to draw a circle, like in the screenshot: It is often a good idea to select a smaller representative region to set parameters since running on the full image may take a few minutes. 
+To select a regions of interest using the Square or Ellipse tool from the toolbar to draw a region of interest, like in the screenshot: It is often a good idea to select a smaller representative region while adjusting parameters since running on the full image may take a few minutes. 
 
 ![](images/screenshot_annotation1.png?raw=true "Screenshot")
 
 ![](images/screenshot_annotation2.png?raw=true "Screenshot")
 
-### Using the Brush tool for refinement
-
 ## Cell segmentation using the built-in QuPath cell detection
 
-To segment the cells in the image, switch back to the DAPI channel, and make sure the annotation you created for the core is selected. Go to `Menu->Analyze->Cell detection->Cell detection`, and try first to segment the cells with the default settings from the first screenshot below. Then change the settings (threshold value and cell expansion) to the ones in the second screenshot, before pressing "Run" again to repeat the segmentation.
+To segment the cells in the image, switch back to the DAPI channel, and make sure the annotation you created for the core is selected. Go to `Menu->Analyze->Cell detection->Cell detection`, and try first to segment the cells with the default settings from the first screenshot below. You may change the settings (cell expansion) to include more of the markers close to cells, before pressing "Run" again to repeat the segmentation.
 
 ![](images/screenshot_cell_seg1.png?raw=true "Screenshot")
 
 ![](images/screenshot_cell_seg2.png?raw=true "Screenshot")
 
-### Using the StarDist QuPath extension (optional)
+## Detecting markers
 
-TODO
-
-Note: if you did not install the StarDist extension prior to creating your project, you need to save the project (`Menu->File->Save`), install the extension (by downloading it from [here](https://github.com/qupath/qupath-extension-stardist/releases) and then dragging-and-dropping the .jar file over the QuPath window), and then restart QuPath.
+The TMA images have three image channels (channel 2-4) that show markers as listed above. They are sometimes seen as individual dots, and sometimes clustered. We will use the `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` to detect markers. It is easier to understand how the tool works if you start to detect markers in one channel. Use the Brightness & contrast tool from the toolbar (looks like a half-moon) to make only the channel 4 visible in the viewport. Zoom in to your region of interest and hoover over a signal to see its pixel intensity in the bottom right corner of the viewport. Also hover over the background, and set a threshold that would separate signal from background. A value around 1000 may be good. 
 
 ## Cell classification
 
