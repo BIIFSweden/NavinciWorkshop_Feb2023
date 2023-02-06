@@ -1,18 +1,21 @@
-# BIIF-Spatial Omics Workshop 
-## Nov 10, 2022: focus on QuPath and TissUUmaps
-Trainers: Fredrik Nysjö, Christophe Avenel, Anna Klemm, Andrea Behanova & Carolina Wählby
+# BIIF-Navinci Workshop 
+## Feb 8-9, 2023: focus on QuPath and TissUUmaps
+Trainers: Fredrik Nysjö, Christophe Avenel, Anna Klemm, & Carolina Wählby
 
 The workshop will consist of short introductory lectures and hands-on work on the participant’s own computers. We envision 10-15 participants, working on their own or in pairs. 
 
 ## Schedule
-*Big, Alfa 3 (9.30-14.00)*
+*Navinci, Feb 8, 9.00-12.00*
+ 
+**9.00-9.30** QuPath intro and overview (Anna)
 
-**9.30-9.45** Intro and ‘pre-flight-software check’, installation of plugins (all)  
-**9.45-10.15** QuPath intro and overview (Anna)
+**9.30-12.00** Hands-on work following written instruction, focus on cell detection and dot counting
 
-**10.15-10.30** Coffee break
+*Navinci, Feb 9, 9.00-12.00*
 
-**10.30-11.15** [Cell segmentation with StarDist in QuPath and feature extraction](part1_qupath/README.md#creating-a-new-qupath-project) (Fredrik)  
+**9.00-11.00** Hands-on work following written instruction, focus on cell detection and dot counting
+
+[Cell segmentation with StarDist in QuPath and feature extraction](part1_qupath/README.md#creating-a-new-qupath-project) (Fredrik)  
 **11.15-12.00** [Intro to semi-automated cell classification and data export for TissUUmaps](part1_qupath/README.md#cell-classification) (Anna and Fredrik)
 
 **12.00-13.00** Lunch
