@@ -98,8 +98,8 @@ Go to `Menu->Objects->Select->Select detections->Select cells` to first select a
 
 ### As CSV table (with cells exported as points)
 
-Go to `Menu->Measure->Export measurements` and select which image you want to export the measrements from. Make sure you are using the options in the screenshot below to export in a CSV format that for example TissUUmaps can read. Repeat this step for each image, and name the exported files A2.csv and A3.csv (or similar).
+Go to `Menu->Measure->Export measurements` and select which image you want to export the measrements from. Make sure you are using the CSV format that for example TissUUmaps can read. Repeat this step for each image, and name the exported files A2.csv and A3.csv (or similar).
 
-Note: if you see the warning "A selected image is open in the viewer..." displayed like in the screenshot, you can just save the project before opening the "Export measurements" dialog again.
+Note: if you see the warning "A selected image is open in the viewer...", you can just save the project before opening the "Export measurements" dialog again.
 
-![](images/screenshot_export_csv.png?raw=true "Screenshot")
+
