@@ -62,15 +62,17 @@ The resulting marker detection will outline markers in bright and dark yellow, w
 
 ![](images/screenshot_channel4_markers.png?raw=true "Screenshot")
 
-## Cell classification
+### Show measurements
+To show some summary statistics of markers per cell, click on the `Show measurement table' (table icon), and select `Show detection measurements`. The table will show information regarding each cell and marker within your region of interest. To summarize the results, click on ´show histograms' at the bottom left corner of the ´Detection results´ panel (see below), and select ´Estimated spot count Channel 4'.
 
-### Training an object classifier
+![](images/screenshot_channel4_histogram.png?raw=true "Screenshot")
 
-According to the signature matrix (see the file `signature_matrix.png` included in the dataset), the Glioma cell type should be expressed in the Opal 650 (mutIDH1) channel. To create a classifier for this cell type, first go to the `Annotations` tab in the left panel, and remove the existing default classes. Then add two new classes, one called Glioma and the other Not-Glioma, that should indicate if a cell is positive or negative for the cell type.
+Now, go back to `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` and set the threshold for channels 2 and 3 to 1000 as well, to detect also these markers.
 
-![](images/screenshot_classes1.png?raw=true "Screenshot")
+### Create an object classifier
 
-![](images/screenshot_classes2.png?raw=true "Screenshot")
+If you want to classify cells as containing one or multiple markers, you can create a simple classifier. Go to the `Annotations` tab in the left panel, and remove the existing default classes. Then add three new classes, one called CA125_pos, mesothelin_pos and interaction_pos, that should indicate if a cell is positive or negative for a given marker.
+
 
 Next step is to add annotation points for training, on top of segmented cells. First switch to the Opal 650 channel in the viewport, to see where the marker is expressed. Select the Points tool from the toolbar, and press the `Add` button to start adding a few points for cells where the marker is expressed (have higher intensity). Assign these points the class Glioma. Now repeat this step for cells where the marker is not expressed, that should have the Not-Glioma class. To better see the intensities inside the cells, you may want to toggle showing the cell boundaries without the nuclei via `Menu->View->Cell display->Cell boundaries only`.
 
