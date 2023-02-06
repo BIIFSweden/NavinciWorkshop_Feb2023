@@ -76,30 +76,17 @@ Now, go back to `Menu->Analyze->Cell detection->Cell detection->Subcellular dete
 
 ## Create an object classifier
 
-If you want to classify cells as containing one or multiple markers, you can create a simple classifier. Go to the `Claaify->Object classification->Create single measurement classifier` tab in the left panel, and remove the existing default classes. Then add three new classes, one called CA125_pos, mesothelin_pos and interaction_pos, that should indicate if a cell is positive or negative for a given marker.
+If you want to classify cells as containing one or multiple markers, you can create a simple classifier. Go to the `Classify->Object classification->Create single measurement classifier` tab in the left panel, and remove the existing default classes. Then add three new classes, one called CA125_pos, mesothelin_pos and interaction_pos, that should indicate if a cell is positive or negative for a given marker. Make selections as in screenshot for the `Create single measurement classifier`:
+
+![](images/screenshot_channel2_classifier.png?raw=true "Screenshot")
 
 
-Next step is to add annotation points for training, on top of segmented cells. First switch to the Opal 650 channel in the viewport, to see where the marker is expressed. Select the Points tool from the toolbar, and press the `Add` button to start adding a few points for cells where the marker is expressed (have higher intensity). Assign these points the class Glioma. Now repeat this step for cells where the marker is not expressed, that should have the Not-Glioma class. To better see the intensities inside the cells, you may want to toggle showing the cell boundaries without the nuclei via `Menu->View->Cell display->Cell boundaries only`.
+Now repeat this step for all markers. To better see the intensities inside the cells, you may want to toggle showing the cell boundaries without the nuclei via `Menu->View->Cell display->Cell boundaries only`. Create a composite classifier to find triple-positive cells using `Classify->Object classification->Create composite classifier´.
 
-![](images/screenshot_singleclass1.png?raw=true "Screenshot")
+![](images/screenshot_trippel_pos.png?raw=true "Screenshot")
 
-![](images/screenshot_singleclass2.png?raw=true "Screenshot")
+ 
 
-The last step is to now train a new classifier. Go to `Menu->Classify->Object classification->Train object classifier`. Follow the screenshots below to select a classifier method and which features and classes that should be used. Also select to use the points you created for the training. After pressing `Live update` and inspecting the result, give the classifier the name Glioma and press `Save`. 
-
-![](images/screenshot_singleclass3.png?raw=true "Screenshot")
-
-![](images/screenshot_singleclass4.png?raw=true "Screenshot")
-
-![](images/screenshot_singleclass5.png?raw=true "Screenshot")
-
-![](images/screenshot_singleclass6.png?raw=true "Screenshot")
-
-### Training multiple object classifiers
-
-After training the Glioma classifier in the previous step, you should now create and train a second classifier for a different cell type. According to the signature matrix, the Oligodendrocyte cell type should be expressed in the Opal 620 (MBP) channel. Make two new classes named Oligo and Not-Oligo, and repeat the steps of creating annotation points for training for each class. Now train a classifier for the new cell type on the Opal 620 feature measurements.
-
-Apply the new classifier on the cells. Note how this will overwrite the previous Glioma/Not-Glioma classification! To combine multiple classifiers in QuPath, go to `Menu->Classify->Object classification->Load object classifier`, then select (using `Ctrl+Left click`) both classifiers in the list and click `Apply classifier sequentially`. Each cell should now be assigned both a Glioma/Not-Glioma class and an Oligo/Not-Oligo class.
 
 ![](images/screenshot_multiclass1.png?raw=true "Screenshot")
 
