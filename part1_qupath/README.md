@@ -28,50 +28,55 @@ For the new project, in the `Project` tab in the left panel, click on `Add image
 
 ## Core annotation
 
-### Displaying individual image channels
+Each image in the dataset contains image data for a single tissue-micro array (TMA) core with 4 channels as described above. Open the image for the first core (OvaryTMA-T113a_A2.lif) by doble-clinking on it. Set the image type to `Fluorescence'. Try to zoom in and out using the mouse or touch-pad. 
 
-Each image in the dataset contains image data for a single tissue-micro array (TMA) core with 4 channels as described above. Open the image for the first core (OvaryTMA-T113a_A2.lif), and use the Brightness & contrast tool from the toolbar (looks like a half-moon) to make only the DAPI channel visible in the viewport:
-
-![](images/screenshot_brightness_contrast1.png?raw=true "Screenshot")
-
-![](images/screenshot_brightness_contrast2.png?raw=true "Screenshot")
+![](images/screenshot_set_type_to_fluorescence.png?raw=true "Screenshot")
 
 ### Selecting a region of interest
 
-To select a regions of interest using the Square or Ellipse tool from the toolbar to draw a region of interest, like in the screenshot: It is often a good idea to select a smaller representative region while adjusting parameters since running on the full image may take a few minutes. 
+To select a regions of interest use the Square or Ellipse tool from the toolbar to draw a region of interest, like in the screenshot: 
 
 ![](images/screenshot_annotation1.png?raw=true "Screenshot")
 
-![](images/screenshot_annotation2.png?raw=true "Screenshot")
+It is often a good idea to select a smaller representative region while adjusting parameters since running on the full image may take a few minutes.
+
+![](images/screenshot_selectROI.png?raw=true "Screenshot")
+
+### Displaying individual image channels
+
+Seeing all image channels at the same time may hide important information. Select the Brightness & contrast tool from the toolbar (looks like a half-moon, see below) to make only the DAPI channel visible in the viewport:
+
+![](images/screenshot_brightness_contrast1.png?raw=true "Screenshot")
+
+![](screenshot_set_to_gray.png?raw=true "Screenshot")
+
 
 ## Cell segmentation using the built-in QuPath cell detection
 
-To segment the cells in the image, switch back to the DAPI channel, and make sure the annotation you created for the core is selected. Go to `Menu->Analyze->Cell detection->Cell detection`, and try first to segment the cells with the default settings from the first screenshot below. You may change the settings (cell expansion) to include more of the markers close to cells, before pressing "Run" again to repeat the segmentation.
+To segment the cells in the image, sshow the DAPI channel, and make sure the annotation you created for the core is selected by clicking on it. Go to `Menu->Analyze->Cell detection->Cell detection`, and try first to segment the cells with the default settings. You may change the settings for cell expansion to include more of the markers close to cells (see below), before pressing "Run" again to repeat the segmentation.
 
-![](images/screenshot_cell_seg1.png?raw=true "Screenshot")
-
-![](images/screenshot_cell_seg2.png?raw=true "Screenshot")
+![](images/screenshot_cell_detection.png?raw=true "Screenshot")
 
 ## Detecting markers
 
 The TMA images have three image channels (channel 2-4) that show markers as listed above. They are sometimes seen as individual dots, and sometimes clustered. We will use the `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` to detect markers. It is easier to understand how the tool works if you start to detect markers in one channel. Use the Brightness & contrast tool from the toolbar (looks like a half-moon) to make only channel 4 visible in the viewport. Zoom in to your region of interest and hoover over a signal to see its pixel intensity in the bottom right corner of the viewport. Also hover over the background, and change the `-1` to a threshold that would separate signal from background in channel 4 (see screenshot below). A value around 1000 may be good. Check the boxes to `split by intensity`, `split by shape`, and `Include clusters`. Now press `Run. 
 
-![](images/screenshot_subcellular.png?raw=true "Screenshot")
+![](images/screenshot_channel4_markers_step1.png?raw=true "Screenshot")
 
 The resulting marker detection will outline markers in bright and dark yellow, where bright yellow outlines single markers, while dark yellow outlines clusters. The number of markers included in a cluster is approximated based on the 'Expected spot size', and 'Max spot size' decides if a spot is a cluster or not.
 
 ![](images/screenshot_channel4_markers.png?raw=true "Screenshot")
 
 ### Show measurements
-To show some summary statistics of markers per cell, click on the `Show measurement table' (table icon), and select `Show detection measurements`. The table will show information regarding each cell and marker within your region of interest. To summarize the results, click on ´show histograms' at the bottom left corner of the ´Detection results´ panel (see below), and select ´Estimated spot count Channel 4'.
+To show some summary statistics of markers per cell, click on the `Show measurement table' (table icon), and select `Show detection measurements`. The table will show information regarding each cell and marker within your region of interest. To summarize the results, click on ´show histograms' at the bottom left corner of the ´Detection results´ panel (see below), and select ´Subcellular: Channel 4: Num spots estimated`. In the screenshot below, ´Count´is the number of cells, `Missing´is the number of cells that lack markers in Channel 4, and the rest of the measurements present the mean, standard deviation, minimum and maximum number of estimated spots per cell. The measurements may be saved as a csv file that can be opened in e.g. excel. 
 
-![](images/screenshot_channel4_histogram.png?raw=true "Screenshot")
+![](images/screenshot_statistics.png?raw=true "Screenshot")
 
-Now, go back to `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` and set the threshold for channels 2 and 3 to 1000 as well, to detect also these markers.
+Now, go back to `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` and detect markers in these channels. Note that the background fluorescence is much higher in these channels, and a suitable threshold for channels 2 and 3 is 10000, to detect red and green markers. 
 
-### Create an object classifier
+## Create an object classifier
 
-If you want to classify cells as containing one or multiple markers, you can create a simple classifier. Go to the `Annotations` tab in the left panel, and remove the existing default classes. Then add three new classes, one called CA125_pos, mesothelin_pos and interaction_pos, that should indicate if a cell is positive or negative for a given marker.
+If you want to classify cells as containing one or multiple markers, you can create a simple classifier. Go to the `Claaify->Object classification->Create single measurement classifier` tab in the left panel, and remove the existing default classes. Then add three new classes, one called CA125_pos, mesothelin_pos and interaction_pos, that should indicate if a cell is positive or negative for a given marker.
 
 
 Next step is to add annotation points for training, on top of segmented cells. First switch to the Opal 650 channel in the viewport, to see where the marker is expressed. Select the Points tool from the toolbar, and press the `Add` button to start adding a few points for cells where the marker is expressed (have higher intensity). Assign these points the class Glioma. Now repeat this step for cells where the marker is not expressed, that should have the Not-Glioma class. To better see the intensities inside the cells, you may want to toggle showing the cell boundaries without the nuclei via `Menu->View->Cell display->Cell boundaries only`.
