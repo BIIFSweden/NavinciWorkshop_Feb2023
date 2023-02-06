@@ -53,7 +53,7 @@ Seeing all image channels at the same time may hide important information. Selec
 
 ## Cell segmentation using the built-in QuPath cell detection
 
-To segment the cells in the image, sshow the DAPI channel, and make sure the annotation you created for the core is selected by clicking on it. Go to `Menu->Analyze->Cell detection->Cell detection`, and try first to segment the cells with the default settings. You may change the settings for cell expansion to include more of the markers close to cells (see below), before pressing "Run" again to repeat the segmentation.
+To segment the cells in the image, show the DAPI channel, and make sure the annotation you created for the core is selected by clicking on it. Go to `Menu->Analyze->Cell detection->Cell detection`, and try first to segment the cells with the default settings. You may change the settings for cell expansion to include more of the markers close to cells (see below), before pressing "Run" again to repeat the segmentation.
 
 ![](images/screenshot_cell_detection.png?raw=true "Screenshot")
 
