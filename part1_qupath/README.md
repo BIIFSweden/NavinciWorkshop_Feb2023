@@ -5,9 +5,11 @@ By Fredrik Nysjö, Carolina Wählby and Anna Klemm
 ## Data, part 1 on TMAs imaged by fluorescence microscopy
 
 Folder: distributed by Agata prior to workshop
+
 Images: 
 -  OvaryTMA-T113a_A2.lif, showing clear cell carcinoma (malignant)
 -  OvaryTMA-T113a_A3.lif, showing serous adenocarcinoma (malignant)
+
 Markers:
 -	Channel 1: Dapi – Blue – Nuclei
 -	Channel 2: Fitc – Green – CA125
