@@ -16,6 +16,10 @@ Markers:
 -	Channel 3: TxR – Red – mesothelin
 -	Channel 4: FarRed – Yellow – interaction
 
+## Goal of the analysis
+
+With this exercise, we aim to define a regions of interest, find all cells and marker signals within this region, and extract the number of signals of each kind per cell.
+
 ## Creating a new QuPath project
 
 Go to `Menu->File->Project->Create project`. This will ask you to create a new folder for the project, where any non-image data (annotations, trained classifiers, detections, etc.) will be stored. THe folder should be empty at start, and the images are kept at their original location and only linked to the folder.
@@ -34,7 +38,7 @@ Each image in the dataset contains image data for a single tissue-micro array (T
 
 ### Basic annotation drawing
 
-To annotate which region in the core image that should be used for the cell segmentation and classification, use the Ellipse tool from the toolbar to draw a circle, like in the screenshot:
+To select a regions of interest using the Square or Ellipse tool from the toolbar to draw a circle, like in the screenshot: It is often a good idea to select a smaller representative region to set parameters since running on the full image may take a few minutes. 
 
 ![](images/screenshot_annotation1.png?raw=true "Screenshot")
 
@@ -42,21 +46,7 @@ To annotate which region in the core image that should be used for the cell segm
 
 ### Using the Brush tool for refinement
 
-The Brush tool in QuPath can be used to further refine an annotation to, for instance, mask out regions in the core that contain imaging/staining artifacts or tissue that should be excluded.
-
-![](images/screenshot_freehand1.png?raw=true "Screenshot")
-
-To try this, make sure the annotation for the core is selected (is highlighted in yellow); you can select an annotation by `Left double-click` on it in the viewport, or via the `Annotations` tab in the left panel. Then select the Brush tool from the toolbar, and use `Alt+Left click` (on Windows and macOS) or `Alt+Win+Left click` (on Linux) to subtract from the annotation. Using `Left click` will simply add to the annotation instead.
-
-When performing this step, you may want to switch to the Autofluorescence channel (or toggle some of the marker channels) to better see structures in the image.
-
-![](images/screenshot_freehand2.png?raw=true "Screenshot")
-
-![](images/screenshot_freehand3.png?raw=true "Screenshot")
-
-## Cell segmentation
-
-### Using the built-in QuPath cell detection
+## Cell segmentation using the built-in QuPath cell detection
 
 To segment the cells in the image, switch back to the DAPI channel, and make sure the annotation you created for the core is selected. Go to `Menu->Analyze->Cell detection->Cell detection`, and try first to segment the cells with the default settings from the first screenshot below. Then change the settings (threshold value and cell expansion) to the ones in the second screenshot, before pressing "Run" again to repeat the segmentation.
 
