@@ -1,12 +1,18 @@
-# QuPath instructions for workshop
+# QuPath instructions for workshop; Navinci Feb 8-9, 2023
 
-By Fredrik Nysjö
+By Fredrik Nysjö, Carolina Wählby and Anna Klemm
 
-## Data
+## Data, part 1 on TMAs imaged by fluorescence microscopy
 
-- Folder: `dataset_1_tma_cores/`
-- Images: `LGG TMA 5_2_Core[1,10,B]...data.tif` and `LGG TMA 7_2_Core[1,1,E]...data.tif`
-- Signature matrix: `signature_matrix.png`
+Folder: distributed by Agata prior to workshop
+Images: 
+-  OvaryTMA-T113a_A2.lif, showing clear cell carcinoma (malignant)
+-  OvaryTMA-T113a_A3.lif, showing serous adenocarcinoma (malignant)
+Markers:
+-	Channel 1: Dapi – Blue – Nuclei
+-	Channel 2: Fitc – Green – CA125
+-	Channel 3: TxR – Red – mesothelin
+-	Channel 4: FarRed – Yellow – interaction
 
 ## Creating a new QuPath project
 
