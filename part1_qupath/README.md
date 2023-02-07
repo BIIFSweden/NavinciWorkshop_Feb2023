@@ -22,7 +22,7 @@ With this exercise, we aim to define a regions of interest, find all cells and m
 
 ## Creating a new QuPath project
 
-Go to `Menu->File->Project->Create project`. This will ask you to create a new folder for the project, where any non-image data (annotations, trained classifiers, detections, etc.) will be stored. THe folder should be empty at start, and the images are kept at their original location and only linked to the folder.
+Go to `Menu->File->Project->Create project`. This will ask you to create a new folder for the project, where any non-image data (annotations, trained classifiers, detections, etc.) will be stored. The folder should be empty at start, and the images are kept at their original location and only linked to the folder.
 
 For the new project, in the `Project` tab in the left panel, click on `Add images` and select the two .lif images from Dataset 1. You can also just drag-and-drop the images onto the QuPath window. 
 
