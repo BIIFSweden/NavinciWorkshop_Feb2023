@@ -7,9 +7,9 @@ The workshop will consist of short introductory lectures and hands-on work on th
 ## Schedule
 *Navinci, Feb 8, 9.00-12.00*
  
-**9.00-9.30** QuPath intro and overview (Anna)
+**9.00-9.15** QuPath intro and overview
 
-**9.30-12.00** Hands-on work following written [instructions](part1_qupath/README.md), focus on fluorescence microscopy data, cell detection and dot counting
+**9.15-12.00** Hands-on work following written [instructions](part1_qupath/README.md), focus on fluorescence microscopy data, cell detection and dot counting
 
 *Navinci, Feb 9, 9.00-12.00*
 
