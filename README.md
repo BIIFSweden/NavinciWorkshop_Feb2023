@@ -13,6 +13,6 @@ The workshop will consist of short introductory lectures and hands-on work on th
 
 *Navinci, Feb 9, 9.00-12.00*
 
-**9.00-11.00** Hands-on work following written [instructions](part1_qupath/README.md), focus on brightfield microscopy data, cell classification and data analysis
+**9.00-11.00** Hands-on work following written [instructions](part1_qupath/dataset2_brightfield.md), focus on brightfield microscopy data, cell classification and data analysis
 
 **11.00-12.00** Overview of methods and tools for further analysis and visualization of tissue data
