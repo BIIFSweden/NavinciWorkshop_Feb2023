@@ -83,6 +83,8 @@ If you want to classify cells as containing one or multiple markers, you can cre
 
 Now repeat this step for all markers. To better see the intensities inside the cells, you may want to toggle showing the cell boundaries without the nuclei via `Menu->View->Cell display->Cell boundaries only`. Create a composite classifier to find triple-positive cells using `Classify->Object classification->Create composite classifier´.
 
+To hide or show detections and classification results, you can right click on the Annotation panel and select `Populate from existing objects->All classes (including subclasses)`. Next, use the `Show/hide...` option to show or hide the classes that you want to see.
+
 ![](images/screenshot_trippel_pos.png?raw=true "Screenshot")
 
 
