@@ -19,18 +19,27 @@ The image scaling seems to be wrong. In the image tab change the pixel size to t
 ## Color Deconvolution
 When importing a brightfield image, QuPath automatically separates the colors into individual channels ("color deconvolution"). Giving the information of `H-DAB` while importing the images to QuPath, we passed on the information of which colors we expect in the images. You can read more about color deconvolution in QuPath in the documentation: https://qupath.readthedocs.io/en/0.3/docs/tutorials/separating_stains.html
 
-Let's inspect the single channels after the automatic color deconvolution: Original, Hematoxylin, DAB, Residual. You can use `show grayscale` and `invert background` to get a fluorescence-like image. 
+Let's inspect the single channels after the automatic color deconvolution: 
+- Original
+- Hematoxylin
+- DAB
+- Residual
+Under `View > Brightness/Contrast` adjust each channel. Use `show grayscale` and `invert background` to get a fluorescence-like image.
+With `View > Show channel viewer` you can inspect the channels in a montage view:
+![](images/screenshot_channel_viewer_original.png?raw=true "Screenshot")
 
 We now try to improve the color deconvolution. For this:
 -	Draw a rectangle covering a smaller area with cells, dots and background
 -	Run `Analyze > Preprocessing > Estimate stain vectors` 
--	Click `Yes` confirming the new modal RGB values as background values.
+-	Click `Yes` confirming the new modal RGB values as background values.  
+	
 ![](images/screenshot_estimate_stain_vectors_bg.png?raw=true "Screenshot")
--	In the `Visual Stain Editor` we can inspect the color deconvolution. Click `Auto` to re-calculate the stain vectors according to the selected area.
+-	In the `Visual Stain Editor` we can inspect the color deconvolution. Click `Auto` to re-calculate the stain vectors according to the selected area.  
 ![](images/screenshot_visual_stain_editor.png?raw=true "Screenshot")
--	Click `OK` and save the settings under a new name.
+-	Click `OK` and save the settings under a new name.  
 ![](images/screenshot_estimate_stain_vectors.png?raw=true "Screenshot")
--	Re-inspect the single channels: Original, Hematoxylin, DAB, Residual
+-	Re-inspect the single channels: Original, Hematoxylin, DAB, Residual. 
+-	![](images/screenshot_channel_viewer_adjusted.png?raw=true "Screenshot")
 
 ## Cell Detection
 Once the colors are well separated to different channel, we can treat the image as any multi-channel fluorescence microscopy image data.
