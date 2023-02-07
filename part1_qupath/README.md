@@ -59,7 +59,7 @@ To segment the cells in the image, show the DAPI channel, and make sure the anno
 
 ## Detecting markers
 
-The TMA images have three image channels (channel 2-4) that show markers as listed above. They are sometimes seen as individual dots, and sometimes clustered. We will use the `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` to detect markers. It is easier to understand how the tool works if you start to detect markers in one channel. Use the Brightness & contrast tool from the toolbar (looks like a half-moon) to make only channel 4 visible in the viewport. Zoom in to your region of interest and hoover over a signal to see its pixel intensity in the bottom right corner of the viewport. Also hover over the background, and change the `-1` to a threshold that would separate signal from background in channel 4 (see screenshot below). A value around 1000 may be good. Check the boxes to `split by intensity`, `split by shape`, and `Include clusters`. Now press `Run. 
+The TMA images have three image channels (channel 2-4) that show markers as listed above. They are sometimes seen as individual dots, and sometimes clustered. We will use the `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` to detect markers. It is easier to understand how the tool works if you start to detect markers in one channel. Use the Brightness & contrast tool from the toolbar (looks like a half-moon) to make only channel 4 visible in the viewport. Zoom in to your region of interest and hoover over a signal to see its pixel intensity in the bottom right corner of the viewport. Also hover over the background, and change the `-1` to a threshold that would separate signal from background in channel 4 (see screenshot below). A value around 1000 may be good. Check the boxes to `Split by intensity`, `Split by shape`, and `Include clusters`. Now press `Run.
 
 ![](images/screenshot_channel4_markers_step1.png?raw=true "Screenshot")
 
@@ -68,11 +68,11 @@ The resulting marker detection will outline markers in bright and dark yellow, w
 ![](images/screenshot_channel4_markers.png?raw=true "Screenshot")
 
 ### Show measurements
-To show some summary statistics of markers per cell, click on the `Show measurement table' (table icon), and select `Show detection measurements`. The table will show information regarding each cell and marker within your region of interest. To summarize the results, click on ´show histograms' at the bottom left corner of the ´Detection results´ panel (see below), and select ´Subcellular: Channel 4: Num spots estimated`. In the screenshot below, ´Count´is the number of cells, `Missing´is the number of cells that lack markers in Channel 4, and the rest of the measurements present the mean, standard deviation, minimum and maximum number of estimated spots per cell. The measurements may be saved as a csv file that can be opened in e.g. excel. 
+To show some summary statistics of markers per cell, click on the `Show measurement table` (table icon), and select `Show detection measurements`. The table will show information regarding each cell and marker within your region of interest. To summarize the results, click on `Show histograms` at the bottom left corner of the `Detection results` panel (see below), and select `Subcellular: Channel 4: Num spots estimated`. In the screenshot below, `Count` is the number of cells, `Missing` is the number of cells that lack markers in Channel 4, and the rest of the measurements present the mean, standard deviation, minimum and maximum number of estimated spots per cell. The measurements may be saved (see `Exporting results` section) as a csv file that can be opened in e.g. Excel.
 
 ![](images/screenshot_statistics.png?raw=true "Screenshot")
 
-Now, go back to `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` and detect markers in these channels. Note that the background fluorescence is much higher in these channels, and a suitable threshold for channels 2 and 3 is 10000, to detect red and green markers. 
+Now, go back to `Menu->Analyze->Cell detection->Cell detection->Subcellular detection` and detect markers in the other channels. Note that the background fluorescence is much higher in these channels, and a suitable threshold for channels 2 and 3 is 10000, to detect red and green markers.
 
 ## Create an object classifier
 
