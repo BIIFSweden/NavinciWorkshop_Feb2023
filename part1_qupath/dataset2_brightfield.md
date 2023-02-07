@@ -53,11 +53,11 @@ Try to find settings for cell detections by yourself!
 -	Suggested settings:  
 
 ## Subcellular Detection
-We are now detecting the dots in the DAB channel.
+We are now detecting the dots in the DAB channel. As in part I, use `Analyze > Cell detection > Subcellular detection (experimental)`.
 ### Exercise: 
 Try to find settings for cell detections by yourself!
 -	Suggested settings:
-For inspection it can be nice to go back  in `View > Brightness/Contrast` to the `Original`, and untick `show grayscale` and `invert background`.
+For inspection it can be nice to go back in `View > Brightness/Contrast` to the `Original`, and untick `show grayscale` and `invert background`.
 It can also help to toggle on/off the annotation.
 
 ## Consideration of automation
@@ -67,7 +67,12 @@ The Workflow viewer lists the commands we have used so far and recorded the para
 Click `Create script` in the Workflow viewer. It will now open the commands with the set parameters in the script editor. Get rid of duplicates and un-wanted commands by deleting single lines. After cleaning, the script looks like this:
 
 Save the script with `File > Save as...` within the Script Editor. Now let's try it out on the second image of this image set: BJ_bf_stimulated.tif
-For this let's go to back to the main QuPath window and `Project` and double-click to activate the image. Click `Yes` to save the changes we made in the first images.
+For this let's go to back to the main QuPath window and `Project` and double-click on BJ_bf_stimulated.tif to activate the image. Click `Yes` to save the changes we made in the first images.
+Now:
+- draw a rectangular annotation to cover the entire image
+- go to the `Script Editor` and click `Run > Run`.
+
+The script separates the color using the same stain vectors as in the first image, and then runs both `Cell detection `and `subcellular detection`. 
 
 
 
