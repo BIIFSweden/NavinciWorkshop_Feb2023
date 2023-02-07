@@ -4,7 +4,7 @@ In this exercise we will learn how to handle colored brightfield images. Here th
 
 ## Image data
 - BJ_bf_not_stimulated.tif
--	BJ_bf_stimulated.tif
+- BJ_bf_stimulated.tif
 
 ## Preparations
 -	Create a new project in QuPath under `File > Project`. Choose an empty folder to create the project. You can also re-use the project from part I.
@@ -24,6 +24,7 @@ Let's inspect the single channels after the automatic color deconvolution:
 - Hematoxylin
 - DAB
 - Residual
+
 Under `View > Brightness/Contrast` adjust each channel. Use `show grayscale` and `invert background` to get a fluorescence-like image.
 With `View > Show channel viewer` you can inspect the channels in a montage view:
 ![](images/screenshot_channel_viewer_original.png?raw=true "Screenshot")
@@ -44,7 +45,7 @@ We now try to improve the color deconvolution. For this:
 ## Cell Detection
 Once the colors are well separated to different channel, we can treat the image as any multi-channel fluorescence microscopy image data.
 For cell detection we can therefore proceed as for data set 1.
-- Draw a rectangular annotation to cover the image
+- Delete the annotation used for color deconvolution and draw a rectangular annotation to cover the entire image
 - Run `Analyze > Cell detection`
 
 ### Exercise: 
@@ -56,6 +57,19 @@ We are now detecting the dots in the DAB channel.
 ### Exercise: 
 Try to find settings for cell detections by yourself!
 -	Suggested settings:
+For inspection it can be nice to go back  in `View > Brightness/Contrast` to the `Original`, and untick `show grayscale` and `invert background`.
+It can also help to toggle on/off the annotation.
 
 ## Consideration of automation
+Open `Automate>Show workflow command history`.  
+The Workflow viewer lists the commands we have used so far and recorded the parameters we entered. You can for example click on the `Cell detection` and it will show the parameters used. Double-clicking on a command will open the command window, with the parameters pre-filled. The viewer lists the commands with the first used one on the top, the last on the bottom. Especially when trying out parameters it will list several times the same command, containing each different parameters. 
+
+Click `Create script` in the Workflow viewer. It will now open the commands with the set parameters in the script editor. Get rid of duplicates and un-wanted commands by deleting single lines. After cleaning, the script looks like this:
+
+Save the script with `File > Save as...` within the Script Editor. Now let's try it out on the second image of this image set: BJ_bf_stimulated.tif
+For this let's go to back to the main QuPath window and `Project` and double-click to activate the image. Click `Yes` to save the changes we made in the first images.
+
+
+
+
 
