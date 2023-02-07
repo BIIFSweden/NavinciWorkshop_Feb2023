@@ -59,12 +59,18 @@ Try to find settings for cell detections by yourself!
 -	Suggested settings:
 For inspection it can be nice to go back in `View > Brightness/Contrast` to the `Original`, and untick `show grayscale` and `invert background`.
 It can also help to toggle on/off the annotation.
+![](images/screenshot_annotation_bar.png?raw=true "Screenshot")
+Final result:
+![](images/screenshot_cell_wannotations.png?raw=true "Screenshot")
 
-## Consideration of automation
+
+## Automating a Workflow
 Open `Automate>Show workflow command history`.  
+![](images/screenshot_workflow_viewer.png?raw=true "Screenshot")
 The Workflow viewer lists the commands we have used so far and recorded the parameters we entered. You can for example click on the `Cell detection` and it will show the parameters used. Double-clicking on a command will open the command window, with the parameters pre-filled. The viewer lists the commands with the first used one on the top, the last on the bottom. Especially when trying out parameters it will list several times the same command, containing each different parameters. 
 
 Click `Create script` in the Workflow viewer. It will now open the commands with the set parameters in the script editor. Get rid of duplicates and un-wanted commands by deleting single lines. After cleaning, the script looks like this:
+![](images/screenshot_script_editor_cleaned.png?raw=true "Screenshot")
 
 Save the script with `File > Save as...` within the Script Editor. Now let's try it out on the second image of this image set: BJ_bf_stimulated.tif
 For this let's go to back to the main QuPath window and `Project` and double-click on BJ_bf_stimulated.tif to activate the image. Click `Yes` to save the changes we made in the first images.
@@ -72,7 +78,10 @@ Now:
 - draw a rectangular annotation to cover the entire image
 - go to the `Script Editor` and click `Run > Run`.
 
-The script separates the color using the same stain vectors as in the first image, and then runs both `Cell detection `and `subcellular detection`. 
+This is the result:
+![](images/screenshot_cell_wannotation_stimulated.png?raw=true "Screenshot")
+
+The script separates the color using the same stain vectors as in the first image, and then runs both `Cell detection `and `subcellular detection`. It is worth checking each step. Were colors well separated? Do the parameters for cell detection and subcellular detection also fit to the new image?
 
 
 
