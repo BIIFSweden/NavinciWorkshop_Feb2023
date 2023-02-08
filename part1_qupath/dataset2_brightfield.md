@@ -78,7 +78,7 @@ Save the script with `File > Save as...` within the Script Editor. Now let's try
 For this let's go to back to the main QuPath window to the tab `Project` and double-click on BJ_bf_stimulated.tif to activate the image. Click `Yes` to save the changes we made in the first image.
 Now:
 - draw a rectangular annotation to cover the entire image
-- go to the `Script Editor` and click `Run > Run`.
+- go to the `Automate>Script Editor` and click `Run > Run`.
 
 This is the result:
 
