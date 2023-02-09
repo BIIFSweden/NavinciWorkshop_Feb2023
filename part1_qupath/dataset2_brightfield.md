@@ -51,9 +51,14 @@ For cell detection we can therefore proceed as for data set 1.
 
 ### Exercise: 
 Try to find settings for cell detections by yourself!
+
+
 <details>
-  <summary>Suggested settings:</summary>
- ![](images/screenshot_settings_cell_detection.png?raw=true "Screenshot")
+	
+  <summary>Suggested settings - click</summary>
+	
+![](images/screenshot_settings_cell_detection.png?raw=true "Screenshot")
+	
 </details>
 
 
@@ -64,7 +69,9 @@ We are now detecting the dots in the DAB channel. As in part I, use `Analyze > C
 Try to find settings for the subcellular detections by yourself!
 <details>
   <summary>Suggested settings:</summary>
- ![](images/screenshot_settings_subcellular_detection.png?raw=true "Screenshot")
+	
+![](images/screenshot_settings_subcellular_detection.png?raw=true "Screenshot")
+
 </details>
 
 ## Final result
@@ -93,11 +100,12 @@ This is the result:
 ![](images/screenshot_cell_wannotation_stimulated.png?raw=true "Screenshot")
 
 The script separates the color using the same stain vectors as in the first image, and then runs both `Cell detection `and `Subcellular detection`. It is worth checking each step. Were colors well separated? Do the parameters for cell detection and subcellular detection also fit to the new image?
-When toggling on/off the annotations we observe that the threshold for the subcellular detection was too low for this image: particles of the background are detected as spots as a result. We should re-run the Subcellular detection with adjusted parameters.  
-For this:
+When toggling on/off the annotations we observe that the threshold for the subcellular detection was too low for this image: particles of the background are detected as spots as a result. When automating a workflow it is important that the settings fit for all the images, similarily as you would keep your incubation and microscopy settings the same for all samples. Try to find settings that fit both images.  
+
+Note that after running the script you can:
 - Open `Automate>Show workflow command history`
 - double-click on `Subcellular spot detection` in the `Workflow viewer`. We now see the parameters we had used via the script. 
-- Increase the `Detection threshold (DAB)` to an appropriate value.
+- Tune the parameters starting from the previously set ones.
 
 
 
