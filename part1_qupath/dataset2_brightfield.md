@@ -25,7 +25,7 @@ Let's inspect the single channels after the automatic color deconvolution:
 - DAB
 - Residual
 
-Under `View > Brightness/Contrast` adjust each channel. Use `show grayscale` and `invert background` to get a fluorescence-like image. We aim for seeing the signal of the blue nuclei in one channel, the signal of the brown/red dots in another channel.
+Under `View > Brightness/Contrast` to adjust each channel. Use `show grayscale` and `invert background` to get a fluorescence-like image. We aim for seeing the signal of the blue nuclei in the Hematoxylin channel, the signal of the brown/red dots in the DAB channel. In Residual we should only see background.
 
 With `View > Show channel viewer` you can inspect the channels in a montage view:
 ![](images/screenshot_channel_viewer_original.png?raw=true "Screenshot")
