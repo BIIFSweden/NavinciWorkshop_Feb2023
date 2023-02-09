@@ -16,18 +16,21 @@ Let's start with `BJ_bf_not_stimulated.tif`: double-click on the image to start 
 The image scaling seems to be wrong. In the image tab change the pixel size to the right value (0.353 µm?).
 
 ## Color Deconvolution
-When importing a brightfield image, QuPath automatically separates the colors into individual channels ("color deconvolution"). Giving the information of `H-DAB` while importing the images to QuPath, we passed on the information of which colors we expect in the images. You can read more about color deconvolution in QuPath in the documentation: https://qupath.readthedocs.io/en/0.3/docs/tutorials/separating_stains.html
+Colored images come with a red, green, blue intensity value for each pixel. There are different method to digitally separate the three stains. Giving the information of `H-DAB` while importing the images to QuPath, we passed on the information of which colors we expect in the images. QuPath then automatically separates the colors into individual channels ("color deconvolution") while importing. You can read more about color deconvolution in QuPath in the documentation: https://qupath.readthedocs.io/en/0.3/docs/tutorials/separating_stains.html
+
+Under `View > Brightness/Contrast` one can see that QuPath automatically separates the channels using different methods. Hematoxylin, DAB, Residual are the 3 resulting channels from color deconvolution, giving the information that we expect colors to follow an H-DAB color scheme.  
 
 Let's inspect the single channels after the automatic color deconvolution: 
 - Hematoxylin
 - DAB
 - Residual
 
-Under `View > Brightness/Contrast` adjust each channel. Use `show grayscale` and `invert background` to get a fluorescence-like image.
+Under `View > Brightness/Contrast` adjust each channel. Use `show grayscale` and `invert background` to get a fluorescence-like image. We aim for seeing the signal of the blue nuclei in one channel, the signal of the brown/red dots in another channel.
+
 With `View > Show channel viewer` you can inspect the channels in a montage view:
 ![](images/screenshot_channel_viewer_original.png?raw=true "Screenshot")
 
-We now try to improve the color deconvolution. For this:
+The automated color separation is quite good. We can still try to improve the color deconvolution. For this:
 -	Draw a rectangle covering a smaller area with cells, dots and background
 -	Run `Analyze > Preprocessing > Estimate stain vectors` 
 -	Click `Yes` confirming the new modal RGB values as background values.  
@@ -48,17 +51,22 @@ For cell detection we can therefore proceed as for data set 1.
 
 ### Exercise: 
 Try to find settings for cell detections by yourself!
--	Suggested settings:  
+<details>
+  <summary>Suggested settings:</summary>
+ ![](images/screenshot_settings_cell_detection.png?raw=true "Screenshot")
+</details>
+
+
 
 ## Subcellular Detection
 We are now detecting the dots in the DAB channel. As in part I, use `Analyze > Cell detection > Subcellular detection (experimental)`.
 ### Exercise: 
-Try to find settings for cell detections by yourself!
--	Suggested settings:
+Try to find settings for the subcellular detections by yourself!
+<details>
+  <summary>Suggested settings:</summary>
+ ![](images/screenshot_settings_subcellular_detection.png?raw=true "Screenshot")
+</details>
 
-For inspection it can be nice to go back in `View > Brightness/Contrast` to the `Original`, and untick `show grayscale` and also untick `invert background`.
-It can also help to toggle on/off the annotations.  
-![](images/screenshot_annotation_bar.png?raw=true "Screenshot")
 ## Final result
 After all the steps, the final results looks like this:  
 ![](images/screenshot_cell_wannotations.png?raw=true "Screenshot")
