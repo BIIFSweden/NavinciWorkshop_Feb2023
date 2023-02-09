@@ -55,7 +55,7 @@ Try to find settings for cell detections by yourself!
 
 <details>
 	
-  <summary>Suggested settings - click</summary>
+  <summary>Suggested settings (click):</summary>
 	
 ![](images/screenshot_settings_cell_detection.png?raw=true "Screenshot")
 	
@@ -68,7 +68,7 @@ We are now detecting the dots in the DAB channel. As in part I, use `Analyze > C
 ### Exercise: 
 Try to find settings for the subcellular detections by yourself!
 <details>
-  <summary>Suggested settings:</summary>
+  <summary>Suggested settings (click):</summary>
 	
 ![](images/screenshot_settings_subcellular_detection.png?raw=true "Screenshot")
 
